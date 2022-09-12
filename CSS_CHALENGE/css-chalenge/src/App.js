@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import DetailsCars from "./components/DetailsCars";
 
 function App() {
+  const cars = [
+    { marca: "Fiat", modelo: "Toro", ano: "2020" },
+    { marca: "Chevrolet", modelo: "Celta", ano: "2012" },
+    { marca: "VW", modelo: "Golf", ano: "2000" },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Desafio CSS - Estilos e CSS reset</h1>
+      {cars.map((car, i) => {
+        <DetailsCars marca={car.marca} modelo={car.modelo} ano={car.ano} />;
+      })}
     </div>
   );
 }
